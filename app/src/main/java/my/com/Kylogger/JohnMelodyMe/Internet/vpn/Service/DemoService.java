@@ -25,10 +25,10 @@ import my.com.Kylogger.JohnMelodyMe.Internet.vpn.R;
 
 public class DemoService extends VpnService {
 
-    public static final String VPN_ADDRESS = "168.168.168.168";
+    public static final String VPN_ADDRESS = "5.181.235.14";//5.181.235.14 (UK) // 219.100.37.215(JPN)// 168.168.168.168
     public static final String BROADCAST_VPN_STATE = "com.vpn.status";
     public static final String BROADCAST_STOP_VPN = "com.vpn.stop";
-    private static final String TAG = "DemoService";
+    private static final String TAG = "VPN";
     private static final String VPN_ROUTE = "0.0.0.0";
     private static final String VPN_DNS = "192.168.1.1";
     private ParcelFileDescriptor vpnInterface = null;

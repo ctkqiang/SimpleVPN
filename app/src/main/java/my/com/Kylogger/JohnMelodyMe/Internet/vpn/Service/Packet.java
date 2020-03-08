@@ -12,7 +12,7 @@ public class Packet {
     public static final int IP4_HEADER_SIZE = 20;
     public static final int TCP_HEADER_SIZE = 20;
     public static final int UDP_HEADER_SIZE = 8;
-    private static final String TAG = "Packet";
+    private static final String TAG = "VPN";
     public IP4Header ip4Header;
     public TCPHeader tcpHeader;
     public UDPHeader udpHeader;

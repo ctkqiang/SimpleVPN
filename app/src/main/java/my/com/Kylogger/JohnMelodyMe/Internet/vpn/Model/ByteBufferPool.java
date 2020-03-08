@@ -4,6 +4,7 @@ import java.nio.ByteBuffer;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class ByteBufferPool {
+    private static final String TAG = "VPN";
     private static final int BUFFER_SIZE = 0x4000;
     private static final ConcurrentLinkedQueue<ByteBuffer> pool = new ConcurrentLinkedQueue<ByteBuffer>();
 
