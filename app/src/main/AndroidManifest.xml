@@ -24,6 +24,7 @@
             android:name=".Service.NetworkService"
             android:enabled="true"
             android:exported="true"
+            android:icon="@mipmap/applogo"
             android:permission="android.permission.BIND_VPN_SERVICE">
 
             <intent-filter>
