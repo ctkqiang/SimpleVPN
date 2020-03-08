@@ -39,9 +39,21 @@ public class NetworkActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (!isVpnStarted) {
                     startVPN();
+                    Network.setText(getResources().getString(R.string.stop));
+                    Log.d(TAG, "VPN-STARTED");
                 } else {
                     sendBroadcast(new Intent(DemoService.BROADCAST_STOP_VPN));
+                    Network.setText(getResources().getString(R.string.start));
+                    Log.d(TAG, "VPN-STOPPED");
                 }
+            }
+        });
+
+        Network.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                sendBroadcast(new Intent(DemoService.BROADCAST_STOP_VPN));
+                return false;
             }
         });
     }
