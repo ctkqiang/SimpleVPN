@@ -4,6 +4,8 @@
       <w>applogo</w>
       <w>declaraction</w>
       <w>networkservice</w>
+      <w>recvfrom</w>
+      <w>upcase</w>
     </words>
   </dictionary>
 </component>
