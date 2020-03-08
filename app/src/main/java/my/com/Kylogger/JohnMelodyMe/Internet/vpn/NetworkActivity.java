@@ -80,11 +80,11 @@ public class NetworkActivity extends AppCompatActivity {
             if (NetworkService.BROADCAST_VPN_STATE.equals(intent.getAction())) {
                 if (intent.getBooleanExtra("Running", false)) {
                     isVpnStarted = true;
-                    Network.setText(getResources().getString(R.string.stop));
+                    //Network.setText(getResources().getString(R.string.stop));
                 } else {
                     isVpnStarted = false;
                     Network.setText(getResources().getString(R.string.start));
-                    handler.postDelayed(runnable, 200);
+                    handler.postDelayed(runnable, 2000);
                 }
             }
         }
