@@ -14,7 +14,14 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import my.com.Kylogger.JohnMelodyMe.Internet.vpn.Service.DemoService;
+import my.com.Kylogger.JohnMelodyMe.Internet.vpn.Service.NetworkService;
+
+/**
+ * @Author : John Melody Melissa
+ * @Copyright: John Melody Melissa  © Copyright 2020
+ * @INPIREDBYGF : Sin Dee <3
+ * @Class: NetworkActivity.class
+ */
 
 public class NetworkActivity extends AppCompatActivity {
     private static final String TAG = "VPN";
@@ -33,7 +40,7 @@ public class NetworkActivity extends AppCompatActivity {
         Log.d(TAG, "Starting " + NetworkActivity.class.getName());
         DeclarationInit();
 
-        registerReceiver(vpnStateReceiver, new IntentFilter(DemoService.BROADCAST_VPN_STATE));
+        registerReceiver(vpnStateReceiver, new IntentFilter(NetworkService.BROADCAST_VPN_STATE));
         Network.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +49,7 @@ public class NetworkActivity extends AppCompatActivity {
                     Network.setText(getResources().getString(R.string.stop));
                     Log.d(TAG, "VPN-STARTED");
                 } else {
-                    sendBroadcast(new Intent(DemoService.BROADCAST_STOP_VPN));
+                    sendBroadcast(new Intent(NetworkService.BROADCAST_STOP_VPN));
                     Network.setText(getResources().getString(R.string.start));
                     Log.d(TAG, "VPN-STOPPED");
                 }
@@ -52,7 +59,7 @@ public class NetworkActivity extends AppCompatActivity {
         Network.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                sendBroadcast(new Intent(DemoService.BROADCAST_STOP_VPN));
+                sendBroadcast(new Intent(NetworkService.BROADCAST_STOP_VPN));
                 return false;
             }
         });
@@ -70,7 +77,7 @@ public class NetworkActivity extends AppCompatActivity {
     private BroadcastReceiver vpnStateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (DemoService.BROADCAST_VPN_STATE.equals(intent.getAction())) {
+            if (NetworkService.BROADCAST_VPN_STATE.equals(intent.getAction())) {
                 if (intent.getBooleanExtra("Running", false)) {
                     isVpnStarted = true;
                     Network.setText(getResources().getString(R.string.stop));
@@ -86,7 +93,7 @@ public class NetworkActivity extends AppCompatActivity {
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            stopService(new Intent(NetworkActivity.this, DemoService.class));
+            stopService(new Intent(NetworkActivity.this, NetworkService.class));
         }
     };
 
@@ -108,7 +115,7 @@ public class NetworkActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == VPN_REQUEST_CODE && resultCode == RESULT_OK) {
-            startService(new Intent(this, DemoService.class));
+            startService(new Intent(this, NetworkService.class));
         }
     }
 

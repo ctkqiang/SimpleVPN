@@ -6,6 +6,12 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 
+/**
+ * @Author : John Melody Melissa
+ * @Copyright: John Melody Melissa  © Copyright 2020
+ * @INPIREDBYGF : Sin Dee <3
+ * @PACKAGE: Packet.class
+ */
 // Representation of an IP Packet
 // TODO: Reduce public mutability
 public class Packet {

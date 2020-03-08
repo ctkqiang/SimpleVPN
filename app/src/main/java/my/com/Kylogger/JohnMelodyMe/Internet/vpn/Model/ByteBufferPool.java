@@ -3,6 +3,13 @@ package my.com.Kylogger.JohnMelodyMe.Internet.vpn.Model;
 import java.nio.ByteBuffer;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+/**
+ * @Author : John Melody Melissa
+ * @Copyright: John Melody Melissa  © Copyright 2020
+ * @INPIREDBYGF : Sin Dee <3
+ * @PACKAGE: ByteBufferPool.class
+ */
+
 public class ByteBufferPool {
     private static final String TAG = "VPN";
     private static final int BUFFER_SIZE = 0x4000;

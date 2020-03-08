@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <service
-            android:name=".Service.DemoService"
+            android:name=".Service.NetworkService"
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.BIND_VPN_SERVICE">

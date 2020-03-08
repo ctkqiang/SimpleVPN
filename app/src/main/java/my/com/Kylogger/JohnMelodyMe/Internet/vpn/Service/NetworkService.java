@@ -1,6 +1,5 @@
 package my.com.Kylogger.JohnMelodyMe.Internet.vpn.Service;
 
-
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -23,7 +22,14 @@ import my.com.Kylogger.JohnMelodyMe.Internet.vpn.Model.ByteBufferPool;
 import my.com.Kylogger.JohnMelodyMe.Internet.vpn.NetworkActivity;
 import my.com.Kylogger.JohnMelodyMe.Internet.vpn.R;
 
-public class DemoService extends VpnService {
+/**
+ * @Author : John Melody Melissa
+ * @Copyright: John Melody Melissa  © Copyright 2020
+ * @INPIREDBYGF : Sin Dee <3
+ * @Service: NETWORKSERVICE
+ */
+
+public class NetworkService extends VpnService {
 
     public static final String VPN_ADDRESS = "5.181.235.14";//5.181.235.14 (UK) // 219.100.37.215(JPN)// 168.168.168.168
     public static final String BROADCAST_VPN_STATE = "com.vpn.status";
