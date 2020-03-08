@@ -44,8 +44,8 @@ import my.com.Kylogger.JohnMelodyMe.Internet.vpn.R;
  */
 
 public class NetworkService extends VpnService {
-
-    public static final String VPN_ADDRESS = "5.181.235.14";//5.181.235.14 (UK) // 219.100.37.215(JPN)// 168.168.168.168
+    //5.181.235.14 (UK) // 219.100.37.215(JPN) //168.168.168.168
+    public static final String VPN_ADDRESS = "219.100.37.96";
     public static final String BROADCAST_VPN_STATE = "com.vpn.status";
     public static final String BROADCAST_STOP_VPN = "com.vpn.stop";
     private static final String TAG = "VPN";
@@ -54,6 +54,7 @@ public class NetworkService extends VpnService {
     private ParcelFileDescriptor vpnInterface = null;
     private ExecutorService executorService;
     private VPNRunnable vpnRunnable;
+
     private BroadcastReceiver stopReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -64,7 +65,6 @@ public class NetworkService extends VpnService {
             if (BROADCAST_STOP_VPN.equals(intent.getAction())) {
                 onRevoke();
                 stopVpn();
-
             }
         }
     };
